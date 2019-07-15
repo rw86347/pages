@@ -1,0 +1,19 @@
+.button {
+    background-color: blue;
+    color: white;
+    width: 150px;
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid black;
+    float: left;
+}
+
+.output {
+    float: left;
+    background-color: rgba(0, 0, 0, 0.0);
+    padding: 5px;
+}
+
+.container {
+    background-color: white;
+}
