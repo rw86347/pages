@@ -1,4 +1,8 @@
 var app = {
+    // debug Test function
+    helloWorld: function() {
+        document.getElementById('helloWorldTag').innerHTML = '<ol><li>html data</li></ol>';
+    },
     // Application Constructor
     initialize: function() {
         this.bindEvents();
