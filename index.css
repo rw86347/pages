@@ -5,15 +5,54 @@
     padding: 10px 0;
     text-align: center;
     border: 1px solid black;
-    float: left;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 15px;
 }
 
-.output {
-    float: left;
-    background-color: rgba(0, 0, 0, 0.0);
-    padding: 5px;
+.allTest {
+    position: relative;
 }
 
-.container {
-    background-color: white;
+.rTable {
+    display: block;
+    width: 100%;
+}
+.rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
+    clear: both;
+}
+.rTableHead, .rTableFoot{
+    background-color: #DDD;
+    font-weight: bold;
+    height: 20px;
+}
+.lTableHead, .lTableFoot{
+    background-color: #DDD;
+    font-weight: bold;
+    height: 20px;
+}
+.rTableCell, .rTableHead {
+    border: 1px solid #999999;
+    float: left;
+    height: 75px;
+    overflow: hidden;
+    padding: 3px 1.8%;
+    width: 70%;
+}
+.lTableCell, .lTableHead {
+    border: 1px solid #999999;
+    float: left;
+    height: 75px;
+    overflow: hidden;
+    padding: 3px 1.8%;
+    width: 20%;
+}
+.rTable:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
