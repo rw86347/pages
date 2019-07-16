@@ -168,11 +168,10 @@ var app = {
     testDeviceInfo: function(){
         wrgClient.deviceInfo(function(res){
             if (res) {
-                alert(res);
+                document.getElementById('helloWorldTag').innerHTML = '<ol><li> res</li></ol>';
             };
-            alert("Susccessful deviceInfo");
         }, function(error){
-            alert(error);
+            document.getElementById('helloWorldTag').innerHTML = '<ol><li> Test Failed</li><li>$error</li></ol>';
         });
     },
     testContacts: function(){
