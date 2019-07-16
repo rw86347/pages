@@ -166,13 +166,13 @@ var app = {
         });
     },
     testDeviceInfo: function(){
-        document.getElementById('deviceInfo').innerHTML = '<ol><li> Message sent to phone.</li></ol>';
+        document.getElementById('deviceInfoOut').innerHTML = '<ol><li> Message sent to phone.</li></ol>';
         wrgClient.deviceInfo(function(res){
             if (res) {
-                document.getElementById('deviceInfo').innerHTML = '<ol><li> res</li></ol>';
+                document.getElementById('deviceInfoOut').innerHTML = '<ol><li> res</li></ol>';
             };
         }, function(error){
-            document.getElementById('deviceInfo').innerHTML = '<ol><li> Test Failed</li><li>$error</li></ol>';
+            document.getElementById('deviceInfoOut').innerHTML = '<ol><li> Test Failed</li><li>$error</li></ol>';
         });
     },
     testContacts: function(){
