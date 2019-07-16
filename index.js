@@ -1,7 +1,7 @@
 var app = {
     // debug Test function
     helloWorld: function() {
-        document.getElementById('helloWorldTag').innerHTML = '<ol><li>Java Script Attached</li></ol>';
+        document.getElementById('helloWorldTag').innerHTML = '<ol><li> Java Script Attached</li></ol>';
     },
     // Application Constructor
     initialize: function() {
@@ -161,6 +161,16 @@ var app = {
                 alert(res);
             };
             alert("Susccessful keep alive");
+        }, function(error){
+            alert(error);
+        });
+    },
+    testDeviceInfo: function(){
+        wrgClient.deviceInfo(function(res){
+            if (res) {
+                alert(res);
+            };
+            alert("Susccessful deviceInfo");
         }, function(error){
             alert(error);
         });
