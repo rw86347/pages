@@ -1,7 +1,7 @@
 var app = {
     // debug Test function
     helloWorld: function() {
-        document.getElementById('helloWorldTag').innerHTML = '<ol><li>html data</li></ol>';
+        document.getElementById('helloWorldTag').innerHTML = '<ol><li>Java Script Attached</li></ol>';
     },
     // Application Constructor
     initialize: function() {
