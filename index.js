@@ -113,9 +113,12 @@ var app = {
        });
     },
     testGetConfigs: function(){
+        document.getElementById('getConfigOut').innerHTML = 'Message sent to phone.';
         wrgClient.configurationValues(["GatewayTimezone", "BranchTag", "RequestedDisclosureRequired"], function(res){
          if (res) {
+             list = ""
              for (var propertyName in res) {
+                 list += propertyName+": "+ res[propertyName] + "<br> "
                  var newItem = "<li><div class='ach_container'>";
                  newItem += "<div class='ach_left'><strong>"+propertyName+"</strong></div><div class='ach_right'>" + res[propertyName] + "</div></p>";
                  newItem += "</div></li>";
@@ -123,11 +126,11 @@ var app = {
                  console.log(newItem);
                  $("#list").append(newItem);
              }
-             $("#list").listview("refresh");
+             document.getElementById('getConfigOut').innerHTML = list;
              console.log($("#list").listview);
          }
      }, function(error){
-         alert(error);
+        document.getElementById('getConfigOut').innerHTML = error;
      });
     },
     testGetConfigOptions: function(){
