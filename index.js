@@ -119,7 +119,6 @@ var app = {
              list = ""
              for (var propertyName in res) {
                  list += propertyName+": "+ res[propertyName] + "<br> ";
-                 console.log(newItem);
              }
              document.getElementById('getConfigOut').innerHTML = list;
          }
