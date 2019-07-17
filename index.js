@@ -194,7 +194,6 @@ var app = {
       });
 
       function onSuccess(imageData) {
-        output.attr('src',"data:image/jpeg;base64," + imageData);
         document.getElementById('deviceInfoOut').innerHTML = '<img src="data:image/jpeg;base64,'+imageData+'"'
       }
 
