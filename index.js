@@ -1,7 +1,7 @@
 var app = {
     // debug Test function
     helloWorld: function() {
-        document.getElementById('helloWorldTag').innerHTML = '<ol><li> Customer Java Script Attached</li></ol>';
+        document.getElementById('helloWorldTag').innerHTML = 'Customer Java Script Attached';
     },
     // Application Constructor
     initialize: function() {
@@ -166,13 +166,13 @@ var app = {
         });
     },
     testDeviceInfo: function(){
-        document.getElementById('deviceInfoOut').innerHTML = '<ol><li> Message sent to phone.</li></ol>';
+        document.getElementById('deviceInfoOut').innerHTML = ' Message sent to phone.';
         wrgClient.deviceInfo(function(res){
             if (res) {
                 document.getElementById('deviceInfoOut').innerHTML = 'deviceModel:'+res["deviceModel"]+'<br> deviceId: '+res["deviceId"];
             };
         }, function(error){
-            document.getElementById('deviceInfoOut').innerHTML = '<ol><li> Test Failed</li><li>$error</li></ol>';
+            document.getElementById('deviceInfoOut').innerHTML = 'Test Failed';
         });
     },
     testContacts: function(){
