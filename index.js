@@ -84,12 +84,13 @@ var app = {
        });
     },
     loanTransferAPR: function(){
+        document.getElementById('loanTransferAprOut').innerHTML = 'Message sent to phone.';
         wrgClient.staticCommand("LoanTransferAPR",function(res){
            if (res) {
-               $("#lblAPR").html(res);
+            document.getElementById('loanTransferAprOut').innerHTML = res;
            };
        },   function(error){
-           alert(error);
+        document.getElementById('loanTransferAprOut').innerHTML = error;
        });
     },
     loanTransferCompletedMessage: function(){
