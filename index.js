@@ -156,6 +156,7 @@ var app = {
         });
     },
     testSetNavigationTitle: function(){
+        document.getElementById('changeTitleOut').innerHTML = 'Message sent to phone.';
         wrgClient.setNavigationTitle("Hello World",function(res){
             if (res) {
                 document.getElementById('changeTitleOut').innerHTML = "Success setting title to \"Hello World\"";
