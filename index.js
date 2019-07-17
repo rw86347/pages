@@ -155,6 +155,15 @@ var app = {
             document.getElementById('lmfaOut').innerHTML = error;
         });
     },
+    testSetNavigationTitle: function(){
+        wrgClient.setNavigationTitle("Hello World",function(res){
+            if (res) {
+                document.getElementById('changeTitleOut').innerHTML = "Success setting title to \"Hello World\"";
+            };
+       },   function(error){
+        document.getElementById('changeTitleOut').innerHTML = "Failed to set Title";
+       });
+    },
     testKeepAlive: function(){
         document.getElementById('keepAliveOut').innerHTML = 'Message sent to phone.';
         wrgClient.keepAlive(function(res){
@@ -194,7 +203,7 @@ var app = {
       });
 
       function onSuccess(imageData) {
-        document.getElementById('takePictureOut').innerHTML = '<img src="data:image/jpeg;base64,'+imageData+'"  style="width:25px;height:60px;">'
+        document.getElementById('takePictureOut').innerHTML = '<img src="data:image/jpeg;base64,'+imageData+'"  style="width:45px;height:60px;">'
       }
 
       function onFail(message) {
