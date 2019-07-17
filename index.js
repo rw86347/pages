@@ -194,12 +194,12 @@ var app = {
       });
 
       function onSuccess(imageData) {
-        document.getElementById('deviceInfoOut').innerHTML = '<img src="data:image/jpeg;base64,'+imageData+'"'
+        document.getElementById('takePictureOut').innerHTML = '<img src="data:image/jpeg;base64,'+imageData+'"  style="width:25px;height:60px;">'
       }
 
       function onFail(message) {
         if(message == "has no access to assets"){
-            document.getElementById('deviceInfoOut').innerHTML = 'Test Failed';
+            document.getElementById('takePictureOut').innerHTML = 'Test Failed';
         }
       }
       
