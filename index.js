@@ -181,16 +181,6 @@ var app = {
             document.getElementById('deviceInfoOut').innerHTML = 'Test Failed';
         });
     },
-    testContacts: function(){
-        wrgClient.contacts(function(res){
-            if (res) {
-                alert(res);
-            };
-            alert("Susccessful got contacts");
-        }, function(error){
-            alert(error);
-        });
-    },
 
     takePicture: function(output) {
       wrgClient.getPicture(onSuccess, onFail, { 
