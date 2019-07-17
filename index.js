@@ -61,14 +61,14 @@ var app = {
             alert(error);
         });
     },
-    testTransfer: function(){
+    testTransfer: function(){ 
+        document.getElementById('simpleTransferOut').innerHTML = 'Message sent to phone.';
         wrgClient.transfer("S09", "S00", "1.00", function(res){
             if (res) {
-                alert(res);
+                document.getElementById('simpleTransferOut').innerHTML = res;
             };
-            alert("Successfully transfered some money");
         }, function(error){
-            alert(error);
+            document.getElementById('simpleTransferOut').innerHTML = error;
         });
     },
 
