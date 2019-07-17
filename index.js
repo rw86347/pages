@@ -103,13 +103,13 @@ var app = {
        });
     },
     testAnyMember: function(){
+        document.getElementById('transferAnyMemberOut').innerHTML = 'Message sent to phone. Transfer from S09 to Italiano(909971) account 00 for $1.00';
         wrgClient.transferAnyMember("S09", "Italiano", "909971", "00", "false", "1.00", function(res){
            if (res) {
-               alert(res);
+                document.getElementById('transferAnyMemberOut').innerHTML = res;
            };
-           alert("Successfully transfered some money");
        }, function(error){
-           alert(error);
+            document.getElementById('transferAnyMemberOut').innerHTML = error + "  Transfer from S09 to Italiano(909971) account 00 for $1.00";
        });
     },
     testGetConfigs: function(){
