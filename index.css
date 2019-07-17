@@ -1,7 +1,7 @@
 .button {
     background-color: blue;
     color: white;
-    width: 150px;
+    width: 90px;
     padding: 10px 0;
     text-align: center;
     border: 1px solid black;
@@ -27,6 +27,7 @@
     background-color: #DDD;
     font-weight: bold;
     height: 20px;
+    font-size:10px;
 }
 .lTableHead, .lTableFoot{
     background-color: #DDD;
