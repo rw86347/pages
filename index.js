@@ -146,13 +146,13 @@ var app = {
        });
     },
     testlmfa: function(){
+        document.getElementById('lmfaOut').innerHTML = 'Message sent to phone.';
         wrgClient.lmfa(function(res){
             if (res) {
-                alert(res);
+                document.getElementById('lmfaOut').innerHTML = res.stringify();
             };
-            alert("Susccessful LMFA");
         }, function(error){
-            alert(error);
+            document.getElementById('lmfaOut').innerHTML = error.stringify();
         });
     },
     testKeepAlive: function(){
