@@ -78,7 +78,6 @@ var app = {
         wrgClient.staticCommand("LoanTransferEUA", function(res){
            if (res) {
             document.getElementById('loanTransferEuaOut').innerHTML = 'success - truncated String: '+res.substring(0, 40);
-               $("#lblEUA").html(res);
            };
        },   function(error){
         document.getElementById('loanTransferEuaOut').innerHTML = error;
