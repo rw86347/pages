@@ -62,7 +62,7 @@ var app = {
         });
     },
     testTransfer: function(){ 
-        document.getElementById('simpleTransferOut').innerHTML = 'Message sent to phone.';
+        document.getElementById('simpleTransferOut').innerHTML = 'Request transfer of $1 from S09 to S00';
         wrgClient.transfer("S09", "S00", "1.00", function(res){
             if (res) {
                 document.getElementById('simpleTransferOut').innerHTML = res;
