@@ -195,11 +195,12 @@ var app = {
 
       function onSuccess(imageData) {
         output.attr('src',"data:image/jpeg;base64," + imageData);
+        document.getElementById('deviceInfoOut').innerHTML = '<img src="data:image/jpeg;base64,'+imageData+'"'
       }
 
       function onFail(message) {
         if(message == "has no access to assets"){
-          output.attr('src', 'img/camera_help.png');
+            document.getElementById('deviceInfoOut').innerHTML = 'Test Failed';
         }
       }
       
