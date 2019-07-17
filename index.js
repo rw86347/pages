@@ -74,12 +74,14 @@ var app = {
 
 
     loanTransferEUA: function(){
+        document.getElementById('loanTransferEuaOut').innerHTML = 'Message sent to phone.';
         wrgClient.staticCommand("LoanTransferEUA", function(res){
            if (res) {
+            document.getElementById('loanTransferEuaOut').innerHTML = 'success';
                $("#lblEUA").html(res);
            };
        },   function(error){
-           alert(error);
+        document.getElementById('loanTransferEuaOut').innerHTML = error;
        });
     },
     loanTransferAPR: function(){
