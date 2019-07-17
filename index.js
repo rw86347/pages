@@ -126,21 +126,19 @@ var app = {
         document.getElementById('getConfigOut').innerHTML = error;
      });
     },
-    testGetConfigOptions: function(){
+    testGetConfigOptions: function(){ 
+        document.getElementById('getConfigOptionsOut').innerHTML = 'Message sent to phone.';
         wrgClient.configurationKeys(function(res){
            if (res) {
+            list = ""
                for (var key in res) {
-                   console.log(res[key]);
-                   var newItem = "<li><div class='ach_container'>";
-                   newItem += "<div class='ach_left'><strong>"+res[key]+"</strong></div>";
-                   newItem += "</div></li>";
-                   
-                   console.log(newItem);
-                   $("#list").append(newItem);
+                   list += key+": "+res[key]+"<br>"
                }
+               document.getElementById('getConfigOptionsOut').innerHTML = list;
            }
        }, function(error){
            alert(error);
+           document.getElementById('getConfigOptionsOut').innerHTML = error;
        });
     },
     testlmfa: function(){
