@@ -62,13 +62,13 @@ var app = {
         });
     },
     testTransfer: function(){ 
-        document.getElementById('simpleTransferOut').innerHTML = 'Request transfer of $1 from S09 to S00';
+        document.getElementById('simpleTransferOut').innerHTML = ' Request transfer of $1 from S09 to S00';
         wrgClient.transfer("S09", "S00", "1.00", function(res){
             if (res) {
-                document.getElementById('simpleTransferOut').innerHTML = res;
+                document.getElementById('simpleTransferOut').innerHTML = res + ' Request transfer of $1 from S09 to S00';
             };
         }, function(error){
-            document.getElementById('simpleTransferOut').innerHTML = error;
+            document.getElementById('simpleTransferOut').innerHTML = error + ' Request transfer of $1 from S09 to S00';
         });
     },
 
