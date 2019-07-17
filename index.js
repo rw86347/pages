@@ -156,13 +156,13 @@ var app = {
         });
     },
     testKeepAlive: function(){
-        document.getElementById('lmfaOut').innerHTML = 'Message sent to phone.';
+        document.getElementById('keepAliveOut').innerHTML = 'Message sent to phone.';
         wrgClient.keepAlive(function(res){
             if (res) {
-                document.getElementById('lmfaOut').innerHTML = res;
+                document.getElementById('keepAliveOut').innerHTML = res;
             };
         }, function(error){
-            document.getElementById('lmfaOut').innerHTML = error;
+            document.getElementById('keepAliveOut').innerHTML = error;
         });
     },
     testDeviceInfo: function(){
