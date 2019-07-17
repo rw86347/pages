@@ -118,16 +118,10 @@ var app = {
          if (res) {
              list = ""
              for (var propertyName in res) {
-                 list += propertyName+": "+ res[propertyName] + "<br> "
-                 var newItem = "<li><div class='ach_container'>";
-                 newItem += "<div class='ach_left'><strong>"+propertyName+"</strong></div><div class='ach_right'>" + res[propertyName] + "</div></p>";
-                 newItem += "</div></li>";
-                 
+                 list += propertyName+": "+ res[propertyName] + "<br> ";
                  console.log(newItem);
-                 $("#list").append(newItem);
              }
              document.getElementById('getConfigOut').innerHTML = list;
-             console.log($("#list").listview);
          }
      }, function(error){
         document.getElementById('getConfigOut').innerHTML = error;
