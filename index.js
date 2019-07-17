@@ -149,10 +149,10 @@ var app = {
         document.getElementById('lmfaOut').innerHTML = 'Message sent to phone.';
         wrgClient.lmfa(function(res){
             if (res) {
-                document.getElementById('lmfaOut').innerHTML = res.stringify();
+                document.getElementById('lmfaOut').innerHTML = res;
             };
         }, function(error){
-            document.getElementById('lmfaOut').innerHTML = error.stringify();
+            document.getElementById('lmfaOut').innerHTML = error;
         });
     },
     testKeepAlive: function(){
