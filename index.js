@@ -74,7 +74,7 @@ var app = {
         document.getElementById('loanTransferEuaOut').innerHTML = 'Message sent to phone.';
         wrgClient.staticCommand("LoanTransferEUA", function(res){
            if (res) {
-            document.getElementById('loanTransferEuaOut').innerHTML = 'success - truncated String: '+res.substring(0, 140);
+            document.getElementById('loanTransferEuaOut').innerHTML = 'success - truncated String: '+res;
            };
        },   function(error){
         document.getElementById('loanTransferEuaOut').innerHTML = error;
