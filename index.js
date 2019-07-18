@@ -33,32 +33,29 @@ var app = {
         console.log('Received Event: ' + id);
     },
     
-    showAccounts: function(){
+    showAccounts: function(){ // accountsOut
+        document.getElementById('accountsOut').innerHTML = 'Message sent to phone.';
         wrgClient.accounts(function(accountsList){
+            list = "";
             for (var i = 0; i < accountsList.length; i++) {
                 if (accountsList[i].validTransferSource) {
-                    var newItem = "<li><div class='ach_container'>";
-                    newItem += "<h4>" + accountsList[i].name + "</h4>";
+                    list += accountsList[i].name + ": "
                     if (accountsList[i].showBalance) {
-                        newItem += "<div class='ach_left'><strong>balance</strong></div><div class='ach_right'>" + accountsList[i].balance + "</div></p>";
-                    };
-                    if (accountsList[i].showAvailableBalance) {
-                        newItem += "<div class='ach_left'><strong>Available Balance</strong></div><div class='ach_right'>" + accountsList[i].availableBalance + "</div></p>";
-                    };
-                    if (accountsList[i].showAvailableCredit) {
-                        newItem += "<div class='ach_left'><strong>Available Credit</strong></div><div class='ach_right'>" + accountsList[i].availableFunds + "</div></p>";
-                    };
-                    if (accountsList[i].showDueDate) {
-                        newItem += "<div class='ach_left'><strong>Available Credit</strong></div><div class='ach_right'>" + accountsList[i].paymentDueDate + "</div></p>";
-                    };
-                    newItem += "</div></li>";
-                    console.log(newItem);
-                    $("#list").append(newItem);
+                        list += "bal-"+accountsList[i].balance + "<br>";
+                    } else if (accountsList[i].showAvailableBalance) {
+                        list += "avlb-"+accountsList[i].availableBalance + "<br>";
+                    } else if (accountsList[i].showAvailableCredit) {
+                        list += "avlb-"+accountsList[i].availableFunds + "<br>";
+                    } else if (accountsList[i].showDueDate) {
+                        list += "due-"+accountsList[i].paymentDueDate + "<br>";
+                    } else {
+                        list += "<br>"
+                    }
                 };
             }
-            $("#list").listview("refresh");
+            document.getElementById('accountsOut').innerHTML = list;
         },function(error){
-            alert(error);
+            document.getElementById('accountsOut').innerHTML = error;
         });
     },
     testTransfer: function(){ 
