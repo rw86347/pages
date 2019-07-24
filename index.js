@@ -1,6 +1,7 @@
 var app = {
     // debug Test function
     helloWorld: function() {
+        console.log("helloWorld")
         document.getElementById('helloWorldTag').innerHTML = 'Customer Java Script Attached';
     },
     // Application Constructor
@@ -100,13 +101,23 @@ var app = {
        });
     },
     testAnyMember: function(){
-        document.getElementById('transferAnyMemberOut').innerHTML = 'Message sent to phone. Transfer from S09 to Italiano(909971) account 00 for $1.00';
-        wrgClient.transferAnyMember("S09", "Italiano", "909971", "00", "false", "1.00", function(res){
+        console.log("testAnyMember")
+
+        var fromShare = document.getElementById('fromShare').value; 
+        var name = document.getElementById('name').value; 
+        var toAccount = document.getElementById('toAccount').value; 
+        var toShare = document.getElementById('toShare').value; 
+        var recurring = document.getElementById('recurring').value; 
+        var amount = document.getElementById('amount').value;
+        anyMemberModal.style.display = "none";
+
+        //wrgClient.transferAnyMember("S09", "Italiano", "909971", "00", "false", "1.00", function(res)
+        wrgClient.transferAnyMember(fromShare, name, toAccount, toShare, recurring, amount, function(res){
            if (res) {
                 document.getElementById('transferAnyMemberOut').innerHTML = res;
            };
        }, function(error){
-            document.getElementById('transferAnyMemberOut').innerHTML = error + "  Transfer from S09 to Italiano(909971) account 00 for $1.00";
+        document.getElementById('transferAnyMemberOut').innerHTML = error + "  Transfer from "+fromShare+" to "+name+"("+toAccount+") account "+toShare+" for $"+amount;
        });
     },
     testGetConfigs: function(){
