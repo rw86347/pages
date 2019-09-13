@@ -22,6 +22,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         document.getElementById('onDeviceReady').innerHTML = "READY!";
+        console.log('device ready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
